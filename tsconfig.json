@@ -1,0 +1,23 @@
+{
+  "extends": "@oakslab/ooo-config/common/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "build/",
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noUnusedParameters": true,
+    "esModuleInterop": true,
+    "preserveConstEnums": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+  "include": ["config/**/*", "server/**/*", "store/**/*", "types/**/*"],
+  "exclude": ["node_modules", "server/db/migrations/**/*"]
+}
