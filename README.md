@@ -1,1 +1,1 @@
-restAPI
+Apollo GraphQL server built on Express with typescript
