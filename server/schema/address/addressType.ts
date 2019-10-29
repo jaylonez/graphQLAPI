@@ -13,7 +13,6 @@ const AddressType = new GraphQLObjectType({
     },
     neighbourhood: {
       type: GraphQLString,
-      description: 'Neighbourhood information',
     },
     postCode: {
       type: GraphQLString,
@@ -26,7 +25,6 @@ const AddressType = new GraphQLObjectType({
     },
     state: {
       type: GraphQLString,
-      resolve: source => source.stateId,
     },
     country: {
       type: GraphQLString,
@@ -44,7 +42,6 @@ const AddressType = new GraphQLObjectType({
     },
   }),
   isTypeOf: data => data.table === 'addresses',
-  interfaces: [require('../common/nodeInterface').NodeInterface],
 });
 
 export default AddressType;

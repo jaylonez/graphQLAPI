@@ -1,4 +1,5 @@
 import knex from 'knex';
+import knexConfig from '../../knexfile';
 
 const config = {
   client: 'postgresql',
@@ -15,12 +16,12 @@ const config = {
   },
   migrations: {
     tableName: 'knex_migrations',
-    directory: `./migrations`,
+    directory: `./server/db/migrations`,
   },
 };
 
 async function init() {
-  return knex(config);
+  return knex(knexConfig);
 }
 
 export default init;

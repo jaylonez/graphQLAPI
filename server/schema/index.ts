@@ -1,10 +1,11 @@
 import { GraphQLSchema, GraphQLObjectType } from 'graphql';
-import User from './user/userType';
 import Address from './address/addressType';
+import User from './user/userType';
+import Product from './product/productType';
 import userQueries from './user/userQueries';
 
 const schema = new GraphQLSchema({
-  types: [User, Product, Recipe, MealPlan, Address, Delivery],
+  types: [User, Product, Address],
   query: new GraphQLObjectType({
     name: 'Query',
     fields: () => ({

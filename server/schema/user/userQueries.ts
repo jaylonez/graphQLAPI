@@ -1,4 +1,4 @@
-import User from './UserType';
+import User from './userType';
 import { GraphQLList } from 'graphql';
 
 const userQueries = {

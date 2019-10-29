@@ -5,9 +5,10 @@ import helmet from 'helmet';
 import { ApolloServer, gql } from 'apollo-server-express';
 import initKnex from './db';
 import schema from './schema';
-// import loadRoutes from './routes';
+import dotenv from 'dotenv-safe';
 
 const app = express();
+dotenv.config();
 
 const port = process.env.PORT || 3456;
 
@@ -40,20 +41,20 @@ async function init() {
   });
   apolloServer.applyMiddleware({ app });
 
-  // // Load routes
-  // loadRoutes(app, context);
-
   return { app, context, apolloServer };
 }
 
 init()
   .then(({ app }) => {
-    app.listen(port, () => {
-      console.log('ERROR!');
+    // @ts-ignore
+    app.listen(port, (err: any) => {
+      if (err) {
+        console.log(err);
+      }
+      console.log(`running on port ${port}`);
     });
   })
   .catch(err => {
     // Won't contain any other error than during the configuration time
-    // tslint:disable-next-line:no-console
     console.error('config', err);
   });
